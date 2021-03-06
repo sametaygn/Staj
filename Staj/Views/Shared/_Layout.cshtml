@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Staj</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    @RenderSection("script",false)
+</head>
+<body>
+    <div id="controlBar">
+        <ul>
+            <li><a href="#">samet</a></li>
+            <li><a href="#">samet</a></li>
+            <li><a href="#">samet</a></li>
+            <li><a href="#">samet</a></li>
+        </ul>
+    </div>
+    <div id="content">
+        <div id="content_header">Samet AYGÜN Staj Çalışması</div>
+        <div id="_content">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+body{
+    display: flex;
+}
+#controlBar{
+    float: left;
+    width: 150px;
+    height: 100%;
+    background-color: #222 ;
+    position: fixed;
+    text-align: center;
+}
+#controlBar a,li{
+    color: white;
+    font-size: 20px;
+    margin-top: 50px;
+ }
+ #controlBar a:hover{
+    color: rgb(180, 180, 180);
+    text-decoration: none;
+   
+ }
+#content{
+    float: left;
+    margin-left: 150px;
+    flex: 1;
+    height: 100%;
+    background-color: black;
+}
+
+#content_header{  
+    width: -webkit-fill-available;
+    line-height: 100px;   
+    height: 100px;
+    background-color: black; 
+    color: honeydew;
+    font-size: 30px;
+    text-align: center;
+    position: fixed;
+}
+#content_header:hover{  
+   color: lemonchiffon;
+}
+#_content{
+    margin-top: 100px;
+   flex: 1;
+   height: auto;
+   background-color: lightgrey;
+}
+
