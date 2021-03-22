@@ -1,0 +1,3 @@
+Uygulamanın çalışabilmesi için appsettings.json dosyasının kendi database isminize göre düzenlenmesi gerekmektedir. 
+EX:"Data Source=DESKTOP-TRFOHR2\\TEW_SQLEXPRESS;Initial Catalog=DBStaj;Integrated Security=True" çift tırnak içerisindeki alan benim bağlantı adresim bunu
+kendi bağlantı adresinizle değiştirip uygulamayı çalıştırdığınızda uygulama database i otomatik olarak kuracaktır.
