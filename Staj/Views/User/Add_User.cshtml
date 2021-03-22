@@ -1,0 +1,21 @@
+﻿@using Staj.Models
+@model User
+@{
+    ViewData["Title"] = "Add_User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form asp-action="Add_User" asp-controller="User" method="post">
+    <input placeholder="İsim" style="background-color:white;" class="form-control form-control-plaintext" asp-for="Name" />
+    <span asp-validation-for="Name"></span>
+    <input placeholder="Soyisim" style="background-color:white;" class="form-control form-control-plaintext" asp-for="Surname" />
+    <span asp-validation-for="Surname"></span>
+    <input placeholder="Şifre" style="background-color:white;" class="form-control form-control-plaintext" asp-for="Password" />
+    <span asp-validation-for="Password"></span>
+    <input placeholder="Şifre Tekrarı" style="background-color:white;" class="form-control form-control-plaintext" asp-for="RePassword" />
+    <span asp-validation-for="RePassword"></span>
+    <input placeholder="E-Mail" style="background-color:white;" class="form-control form-control-plaintext" asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+    <button class="btn btn-dark">Ekle</button>
+</form>
+

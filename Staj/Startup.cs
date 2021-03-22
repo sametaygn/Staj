@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Staj.Hubs;
 using Staj.Models;
 using System;
 using System.Collections.Generic;
@@ -25,10 +26,12 @@ namespace Staj
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
             services.AddControllersWithViews();
             services.AddDbContext<Context>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddSignalR();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,9 +56,12 @@ namespace Staj
 
             app.UseEndpoints(endpoints =>
             {
+                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=User}/{action=Index}/{id?}");
+                endpoints.MapDefaultControllerRoute();
+                endpoints.MapHub<MonitorHub>("/MonitorHub");
             });
         }
     }

@@ -1,4 +1,6 @@
-﻿
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using Staj.Models
+@model List<User>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +8,27 @@
 
 <h1>Index</h1>
 
+<table class="table table-dark">
+    <tr>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Şifre</th>
+        <th>Email</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(item.Name)</td>
+            <td>@(item.Surname)</td>
+            <td id="password">@(item.Password)</td>
+            <td>@(item.Email)</td>
+            <td><a asp-action="Update" asp-route-id="@(item.Id)" class="btn btn-warning">Güncelle</a></td>
+            <td><a asp-action="Delete" asp-route-id="@(item.Id)" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+</table>
+<form asp-action="Add_User" asp-controller="User" method="get">
+    <button class="btn btn-success btn-lg">Yani Kullanıcı Ekle</button>
+</form>

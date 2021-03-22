@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Monitoring";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Monitoring</h1>
+<input type="text" id="message" />
+<button id="send">Gönder</button>
+<table class="table table-dark" id="list">
+    <tr>
+        <th>Log Tipi</th>
+        <th>Id</th>
+        <th>Adı</th>
+        <th>Soyadı</th>
+        <th>Şifre</th>
+        <th>E Mail</th>
+
+    </tr>
+</table>
+
+<script src="~/js/SignalR/dist/browser/signalr.js"></script>
+<script src="~/js/SignalRReciveMessage.js"></script>
